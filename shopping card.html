@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shoopting cart </title>
+</head>
+
+<body>
+    <h1>My shooping cart</h1>
+    <div class="cart">
+
+    </div>
+    <div class="grandtotal"></div>
+    <script>
+        let items = [];
+        let sum = 0;
+        main();
+        async function main(){
+
+        
+        while (true) {
+            let item = prompt("Enter the name  of product or Enter = to finsih")
+            if (item === "="||item===null) {
+                break
+            }
+            let price = Number(prompt("Enter the price"))
+            let quantity = Number(prompt("ENter the quantity"))
+            let total = calculateTotal(price, quantity)
+              items.push({
+                name: item,
+                price: price,
+                quantity: quantity,
+                total: total
+             })
+
+
+        
+        sum = sum + total;
+
+        let cart = document.querySelector(".cart")
+        cart.innerHTML += `
+                 <div>
+                    <h3>product:${item}</h3>;
+                  
+                    price:${price}<br>
+                    quantity:${quantity}<br>
+                    total:${total}
+                    </div>
+                 `
+                   await new Promise(resolve=> setTimeout(resolve,0));
+
+        }
+            document.querySelector(".grandtotal").innerHTML += `<h1>Grand total=${sum}`
+    }
+        function calculateTotal(price, quantity) {
+            return price * quantity;
+
+        }
+    
+
+
+
+        
+
+
+    </script>
+</body>
+
+</html>

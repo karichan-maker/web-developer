@@ -1,0 +1,52 @@
+<!-- this is for making  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window scroller</title>
+    <style>
+        #paragraph{
+            background-color: green;
+            font-size: 114px;
+        }
+        #btn{
+            font-size: 50px;
+            cursor: pointer;
+        }
+        #btn:hover{
+            color:red;
+        }
+        #btn-h{
+            font-size: 50px;
+        }
+        #btn-h:hover{
+        color:green;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btn-h">go to random</button>
+    <div id="paragraph"> hey ,i am web developer ,Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, excepturi? Molestiae aperiam est qui ab porro similique hic pariatur asperiores illo nihil assumenda dolorum iusto, perferendis laudantium quia repudiandae iste, fugit magnam! Eius repudiandae, incidunt pariatur fugit dolorum quos amet. Unde ex mollitia, alias explicabo quidem eaque sit modi velit suscipit molestiae magni saepe expedita.</div>
+    <button id="btn">go to top</button>
+<script> 
+    let btn=document.getElementById("btn")
+    function smoothScrollToTop(){
+     window.scrollTo({
+     top:0,
+     behavior:"smooth"
+     })
+    }
+    document.getElementById("btn").onclick=smoothScrollToTop;
+    function smoothScrollToanyheight(){
+     window.scrollTo({
+     top:document.documentElement.scrollHeight,
+     behavior:"smooth"
+     })
+    }
+    document.getElementById("btn-h").onclick=smoothScrollToanyheight;
+</script>
+
+</body>
+</html>
